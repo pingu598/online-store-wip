@@ -8,18 +8,18 @@ import {Trash} from 'react-bootstrap-icons'
 import Badge from 'react-bootstrap/Badge'
 
 const Basket = () => {
-   return(   
-     <> 
+   return (   
+    <> 
     <Navigationbar/>  
     <Container className="basketMargin">
         <h2>Basket</h2>        
         <Card className="basketItem">
         <Row>
             <Col>
-                <Card.Img src="/images/dog.png" className="basketImage"></Card.Img>
+                <Card.Img src="/images/empty.jpg" className="basketImage"></Card.Img>
             </Col>
             <Col xs={6} className="basketText">
-                <p>Dog</p>
+                <p>Productname</p>
                 <Badge pill variant="success">
                     Available
                 </Badge>{' '}
