@@ -1,0 +1,89 @@
+.floatRight {
+    float: right;
+}
+
+.loginDrop {
+    margin-left: 5px;
+}
+
+.basketButton {
+    margin-left: 5px;
+}
+
+.footerStyle {
+    background-color: lightgray;
+    position: relative;
+    bottom: 0px; 
+    width: 100%;
+    text-align: left;
+    margin-bottom: 0rem;
+}
+
+.card {
+    width: 18rem
+}
+
+.loginRStyle {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.basketItem {
+    width: 100%;
+    text-align: center;
+    background-color: lightgray; 
+}
+
+.basketImage {
+    width: 50%;     
+}
+
+.basketText {
+    display:table-cell;
+    padding-top: 45px;
+}
+.basketButtons {
+    position: relative;
+    display: inline-block;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.basketMargin {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.price1 {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.price2 {
+    text-align: right;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.basketBall {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    border-radius: 50%;
+    font-size: 10px;
+    color: #fff;
+    text-align: center;
+    background: red;
+    z-index: 2;
+}
+
+.basket {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.basketCount {
+    
+}
