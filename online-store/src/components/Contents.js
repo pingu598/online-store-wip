@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 
-const Contents = ({items}) => {
-    const addItem = ({props}) => {
-      window.localStorage.setItem('product', "dog") //TODO Fix
+const Contents = (props) => {
+    const items = props.items
+
+    const addItem = (item) => {
+      props.itemToCart(item) //TODO: Add more data
     }
-    
     const InitiateItems = () => {       
         return (
         items.map((item, index) => {   
@@ -21,7 +22,7 @@ const Contents = ({items}) => {
                 Some quick example text to build on the card title and make up the bulk of
                 the card's content.
               </Card.Text>
-              <Button variant="primary" onClick={addItem}>Add to cart</Button>
+              <Button variant="primary" onClick={()=>{addItem(item)}}>Add to cart</Button>
             </Card.Body>
             </Card>   
             )       

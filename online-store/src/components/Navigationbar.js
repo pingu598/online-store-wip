@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Container from 'react-bootstrap/Container'
@@ -9,12 +9,13 @@ import Dropdown from 'react-bootstrap/Dropdown'
 import {PersonCircle, Basket2Fill } from 'react-bootstrap-icons'
 
 const Navigationbar = () => {
-    let itemCount = window.localStorage.getItem('itemCount')
-    //const [itemCounter, setItemCounter] = useState(0)
-
     const ItemCount = () => {
-        console.log(window.localStorage.getItem('token')) //Debugging for token TODO: Delete 
-        if (itemCount === "") {
+        //console.log(window.localStorage.getItem('token')) //Debugging for token TODO: Delete 
+        let cart = JSON.parse(window.localStorage.getItem('cart'))
+        console.log(cart)
+        const itemCount = cart != null ? Object.keys(cart).length : null
+       
+        if (cart != null && Object.keys(cart).length != 0) {         
             return (
                 <div className="basketBall">
                     {itemCount}
@@ -74,5 +75,7 @@ const Navigationbar = () => {
     </Navbar>  
     )
 }
+
+
 
 export default Navigationbar

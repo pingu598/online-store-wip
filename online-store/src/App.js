@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useState} from 'react'
+import React, {useState, useRef} from 'react'
 import {
   BrowserRouter as Router,
   Switch, Route, Redirect
@@ -26,7 +26,6 @@ const App = () => {
   return (
     <>
     <Router>
-      
       <Switch>
         <Route path="/login">
           {userOne || window.localStorage.getItem('token')
