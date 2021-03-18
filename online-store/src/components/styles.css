@@ -2,6 +2,25 @@
     float: right;
 }
 
+.basketPos {
+    position: absolute;
+    bottom: 5%;
+}
+
+.pricePos {
+    position: absolute;
+    color: red;
+    bottom: 15%;   
+}
+
+.cardCenter {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
 .loginDrop {
     margin-left: 5px;
 }
@@ -20,7 +39,7 @@
 }
 
 .card {
-    width: 18rem
+    width: 18rem;
 }
 
 .loginRStyle {
@@ -32,21 +51,27 @@
     width: 100%;
     text-align: center;
     background-color: lightgray; 
+    margin-bottom: 10px;
 }
 
 .basketImage {
-    width: 50%;     
+    margin-top: 12%;
+    margin-bottom: 12%;
+    width:35%;    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
 }
 
 .basketText {
     display:table-cell;
-    padding-top: 45px;
+    top: 40%;
 }
 .basketButtons {
     position: relative;
     display: inline-block;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    top: 40%
 }
 
 .basketMargin {

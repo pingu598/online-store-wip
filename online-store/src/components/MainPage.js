@@ -1,31 +1,30 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Navigationbar from '../components/Navigationbar'
 import Contents from '../components/Contents'
+import addBasket from '../util/addBasket'
+import itemService from '../services/itemService'
 
 const MainPage = () => {
     const [itemCount, setItemCount] = useState(0) //TODO: Functioning
+    const [items, setItems] = useState([{name: "obj1", price: 200, available: 0, id: 1}])
     const itemToCart = (item) => {
-        const cart = JSON.parse(window.localStorage.getItem('cart'))
-        const cartObj = {
-            item: item
-        }       
-        const newCart = cart != null ? [...cart, cartObj] : [cartObj]
-        window.localStorage.setItem('cart', JSON.stringify(newCart))
-        console.log(window.localStorage.getItem('cart'))   
-        const cartCount = Object.keys(newCart).length
-        setItemCount(cartCount)
+        setItemCount(addBasket(item))
     }
+
+    //Initiate items from DB
+    useEffect(() => {   
+        itemService.getAllItems().then(res => {
+            console.log(res)
+            setItems(res)
+        })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
 
     return (
         <>
             <Navigationbar/>
-            <Contents itemToCart={itemToCart} items={["testObj1","testObj2","testObj3","testObj",
-            "testObj","testObj","testObj","testObj",
-            "testObj","testObj","testObj","testObj",
-            "testObj","testObj","testObj","testObj",
-            "testObj","testObj","testObj","testObj", "testObj",
-            ]}/>
-        </>
+            <Contents itemToCart={itemToCart} items={items}/>
+        </>     
     )
 }
 export default MainPage

@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useState, useRef} from 'react'
+import React, {useState} from 'react'
 import {
   BrowserRouter as Router,
   Switch, Route, Redirect
@@ -12,6 +12,7 @@ import Register from './components/Register'
 import Basket from './components/Basket'
 import AboutUs from './components/AboutUs'
 import MainPage from './components/MainPage'
+import ContentPage from './components/ContentPage'
 
 const App = () => {
   const [userOne, setUser] = useState(null) 
@@ -27,6 +28,9 @@ const App = () => {
     <>
     <Router>
       <Switch>
+        <Route path="/items/:id">
+          <ContentPage/>
+        </Route>    
         <Route path="/login">
           {userOne || window.localStorage.getItem('token')
            ? <Redirect to="/"/>

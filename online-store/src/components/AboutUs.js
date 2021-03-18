@@ -1,16 +1,20 @@
 import Container from 'react-bootstrap/Container'
 import Navigationbar from './Navigationbar'
-import Button from 'react-bootstrap/Button'
+import {useSpring, animated} from 'react-spring'
 
 const AboutUs = () => {
-    //TODO:
+    //TODO
+    const Animation = () => {
+        const props = useSpring({opacity: 1, from: {opacity: 0}})
+        return <animated.div style={props}>TODO</animated.div>
+    }
+    
     return (   
     <> 
-    <Navigationbar/>  
-    <Container>
-        <Button>This is about page</Button>
-    </Container>
-    
+        <Navigationbar/>  
+        <Container>
+            <Animation/>
+        </Container> 
     </>
    )
 }

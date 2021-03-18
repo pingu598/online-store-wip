@@ -6,4 +6,4 @@ const register = async credentials => {
   return response.data
 }
 
-export default { register }
+export default register 

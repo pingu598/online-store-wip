@@ -22,9 +22,9 @@ app.use(cors())
 app.use(express.json())
 app.use(middleware.requestLogger)
 
+app.use('/items', itemRouter)
 app.use('/register', usersRouter)
 app.use('/login', loginRouter)
-app.use('/', itemRouter) //TODO
 
 app.use(middleware.unknownEndpoint)
 app.use(middleware.errorHandler)
